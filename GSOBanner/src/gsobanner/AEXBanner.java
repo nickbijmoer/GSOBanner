@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  *
  * @author Bart Memelink
  */
-public class AEXBanner {
+public class AEXBanner extends Application {
     
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 100;
@@ -61,7 +61,9 @@ public class AEXBanner {
                 if (lag >= NANO_TICKS) {
                     // calculate new location of text
                     // TODO
-text.relocate(textPosition,0);
+                    
+                    
+                    text.relocate(textPosition,0);
 			prevUpdate = now;
                 }
             }
@@ -74,7 +76,7 @@ text.relocate(textPosition,0);
                 super.start();
             }
         };
-        timer.start();
+        animationTimer.start();
     }
 
     public void setKoersen(String koersen) {
@@ -89,4 +91,4 @@ text.relocate(textPosition,0);
     }
 }
 
-}
+

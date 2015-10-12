@@ -5,10 +5,17 @@
  */
 package gsobanner;
 
+import java.util.List;
+
 /**
  *
  * @author Bart Memelink
  */
-public class MockEffectenbeurs {
+public class MockEffectenbeurs implements IEffectenbeurs{
+
+    @Override
+    public List<IFonds> getKoersen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

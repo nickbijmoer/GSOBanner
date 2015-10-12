@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  * @author nickbijmoer
  * @author Bart Memelink
  */
-public class Application extends AEXBanner {
+public class Application {
 
     /**
      * @param args the command line arguments

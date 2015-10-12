@@ -13,7 +13,7 @@ import java.util.Timer;
  */
 public class BannerController {
     private AEXBanner banner;
-    private IEffectenBeurs effectenbeurs;
+    private IEffectenbeurs effectenbeurs;
     private Timer pollingTimer;
 
     public BannerController(AEXBanner banner) {
@@ -24,6 +24,7 @@ public class BannerController {
         // Start polling timer: update banner every two seconds
         pollingTimer = new Timer();
         // TODO
+        
     }
 
     // Stop banner controller

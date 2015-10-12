@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Bart Memelink
  */
-public interface IEffectenbeurs {
+public interface IEffectenbeurs{
     
     public List<IFonds> getKoersen();
 }
