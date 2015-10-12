@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  *
  * @author Bart Memelink
  */
-public class AEXBanner extends Application {
+public class AEXBanner extends javafx.application.Application {
     
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 100;

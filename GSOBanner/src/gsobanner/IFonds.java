@@ -11,7 +11,7 @@ package gsobanner;
  */
 public interface IFonds {
     
-    public String getNaam();
+    public String getName();
     
     public double getKoers();
     

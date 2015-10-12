@@ -32,6 +32,7 @@ public class BannerController {
         pollingTimer.cancel();
         // Stop simulation timer of effectenbeurs
         // TODO
+        ((MockEffectenbeurs) effectenbeurs).StopTimer();
     }
 
 }
