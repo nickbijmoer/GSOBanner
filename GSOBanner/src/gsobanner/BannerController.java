@@ -24,6 +24,7 @@ public class BannerController {
         // Start polling timer: update banner every two seconds
         pollingTimer = new Timer();
         // TODO
+        pollingTimer.schedule(new UpdateBannerTask(banner,effectenbeurs), 2000,2000);
         
     }
 
@@ -34,5 +35,7 @@ public class BannerController {
         // TODO
         ((MockEffectenbeurs) effectenbeurs).StopTimer();
     }
+    
+    
 
 }
