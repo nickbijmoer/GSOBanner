@@ -23,6 +23,7 @@ public class AEXBanner extends Application {
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 100;
     public static final int NANO_TICKS = 20000000; 
+    public final double textspeed = 12;
     // FRAME_RATE = 1000000000/NANO_TICKS = 50;
 
     private Text text;
@@ -61,8 +62,13 @@ public class AEXBanner extends Application {
                 if (lag >= NANO_TICKS) {
                     // calculate new location of text
                     // TODO
+                    textPosition -= textspeed;
                     
-                    
+                    if(textPosition + textLength < 0)
+                    {
+                        textPosition = 1000;
+                    }
+             
                     text.relocate(textPosition,0);
 			prevUpdate = now;
                 }
