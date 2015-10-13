@@ -32,6 +32,7 @@ public class Fond implements IFonds {
     
     public void setKoers(double Koers)
     {
+
         this.koers = Koers;
     }
     

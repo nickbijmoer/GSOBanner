@@ -14,16 +14,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Bart Memelink
- */
 public class AEXBanner extends javafx.application.Application {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        launch(args);
+    }
     
+       
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 100;
     public static final int NANO_TICKS = 20000000; 
-    public final double textspeed = 12;
+    public final double textspeed = 5;
     // FRAME_RATE = 1000000000/NANO_TICKS = 50;
 
     private Text text;

@@ -30,7 +30,7 @@ public class MockEffectenbeurs implements IEffectenbeurs{
         this.fonds = temps;
         this.timer = new Timer();
         this.random = new Random();
-        
+        StartTimer();
     }
     
     @Override
@@ -47,7 +47,7 @@ public class MockEffectenbeurs implements IEffectenbeurs{
                  for(IFonds f : fonds)
                    ((Fond) f).setKoers(random.nextDouble() + random.nextInt(100));
             }
-        }, 0, 2000);
+        }, 0, 8000);
     }
     
     public void StopTimer()
