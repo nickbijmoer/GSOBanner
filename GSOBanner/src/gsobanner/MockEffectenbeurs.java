@@ -5,6 +5,8 @@
  */
 package gsobanner;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -15,13 +17,13 @@ import java.util.TimerTask;
  *
  * @author Bart Memelink
  */
-public class MockEffectenbeurs implements IEffectenbeurs{
+public class MockEffectenbeurs extends UnicastRemoteObject implements IEffectenbeurs{
 
     private List<IFonds> fonds;
     private Timer timer;
     private Random random;
     
-    public MockEffectenbeurs()
+    public MockEffectenbeurs() throws RemoteException
     {
         ArrayList<IFonds> temps = new ArrayList<IFonds>();
         temps.add(new Fond("Nick", 5.2));
@@ -45,7 +47,7 @@ public class MockEffectenbeurs implements IEffectenbeurs{
             @Override
             public void run() {
                  for(IFonds f : fonds)
-                   ((Fond) f).setKoers(random.nextDouble() + random.nextInt(100));
+                   ((Fond) f).setKoers(random.nextInt(99 - 1) /100 + random.nextInt(99 -1));
             }
         }, 0, 8000);
     }

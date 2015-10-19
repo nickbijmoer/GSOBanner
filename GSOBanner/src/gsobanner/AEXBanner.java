@@ -5,6 +5,7 @@
  */
 package gsobanner;
 
+import java.rmi.RemoteException;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -38,7 +39,7 @@ public class AEXBanner extends javafx.application.Application {
     private AnimationTimer animationTimer;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws RemoteException {
 
         controller = new BannerController(this);
 
