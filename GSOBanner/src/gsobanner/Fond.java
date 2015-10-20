@@ -5,6 +5,8 @@
  */
 package gsobanner;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bart Memelink

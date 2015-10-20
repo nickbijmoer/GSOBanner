@@ -24,19 +24,18 @@ public class BannerController {
     public Registry registry = null;
     public String bindingName = "AEX";
     public int portNumber = 5081;
-    public String ipAddress = "10.0.1.13";
+    public String ipAddress = "145.144.248.189";
     private List<IFonds> fondslist;
 
 
     public BannerController(AEXBanner banner) throws RemoteException {
-        connect();
-
         this.banner = banner;
         this.effectenbeurs = new MockEffectenbeurs();
         
         // Start polling timer: update banner every two seconds
         pollingTimer = new Timer();
         // TODO
+        
         pollingTimer.schedule(new UpdateBannerTask(banner,effectenbeurs), 2000,2000);
     }
 
@@ -48,7 +47,7 @@ public class BannerController {
         ((MockEffectenbeurs) effectenbeurs).StopTimer();
     }
     
-    public void connect() throws RemoteException {
+    public IEffectenbeurs connect() throws RemoteException {
 
         try {
             registry = LocateRegistry.getRegistry(ipAddress, portNumber);
@@ -80,6 +79,7 @@ public class BannerController {
             
 
         }
+        return effectenbeurs;
     }
     
 

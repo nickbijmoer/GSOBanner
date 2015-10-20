@@ -5,13 +5,14 @@
  */
 package gsobanner;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author Bart Memelink
  */
-public class Effectenbeurs implements IEffectenbeurs {
+public class Effectenbeurs implements IEffectenbeurs, Serializable {
 
     @Override
     public List<IFonds> getKoersen() {

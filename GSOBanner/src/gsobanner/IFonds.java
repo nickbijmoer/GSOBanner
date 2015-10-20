@@ -5,11 +5,13 @@
  */
 package gsobanner;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bart Memelink
  */
-public interface IFonds {
+public interface IFonds extends Serializable{
     
     String getName();
     double getKoers();
