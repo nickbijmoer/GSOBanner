@@ -11,6 +11,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.List;
 import java.util.Timer;
+import java.util.TimerTask;
+import javafx.application.Platform;
 import javax.annotation.Resource;
 
 /**
@@ -23,20 +25,36 @@ public class BannerController {
     private Timer pollingTimer;
     public Registry registry = null;
     public String bindingName = "AEX";
-    public int portNumber = 5081;
-    public String ipAddress = "145.144.248.189";
     private List<IFonds> fondslist;
+    private RMIClient RMIC;
 
 
     public BannerController(AEXBanner banner) throws RemoteException {
+        this.RMIC = new RMIClient("127.0.0.1", 1099);
+
         this.banner = banner;
         this.effectenbeurs = new MockEffectenbeurs();
         
         // Start polling timer: update banner every two seconds
         pollingTimer = new Timer();
-        // TODO
-        
-        pollingTimer.schedule(new UpdateBannerTask(banner,effectenbeurs), 2000,2000);
+        pollingTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                String s = "";
+                for (IFonds eb : RMIC.GetKoersen()) {
+                    s = s + " " + eb.getName() + " " + eb.getKoers();
+                }
+                final String fs = s;
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        banner.setKoersen(fs);
+                    }
+                });
+
+            }
+        }, 0, 1500);
     }
 
     // Stop banner controller
@@ -47,40 +65,7 @@ public class BannerController {
         ((MockEffectenbeurs) effectenbeurs).StopTimer();
     }
     
-    public IEffectenbeurs connect() throws RemoteException {
-
-        try {
-            registry = LocateRegistry.getRegistry(ipAddress, portNumber);
-        } catch (RemoteException ex) {
-            System.out.println("Client: Cannot locate registry");
-            System.out.println("Client: RemoteException: " + ex.getMessage());
-            registry = null;
-        }
-        if (registry != null) {
-        } else {
-            System.out.println("Client: Cannot locate registry");
-            System.out.println("Client: Registry is null pointer");
-        }
-
-        if (registry != null) {
-
-            try {
-                effectenbeurs = (IEffectenbeurs) registry.lookup(bindingName);
-            } catch (RemoteException | NotBoundException ex) {
-                effectenbeurs = null;
-            }
-
-            if (effectenbeurs != null) {
-            } else {
-                
-                System.out.println("Client: Effectenbeur is null pointer");
-               
-            }
-            
-
-        }
-        return effectenbeurs;
-    }
+  
     
 
 }

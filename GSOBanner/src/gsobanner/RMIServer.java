@@ -16,7 +16,7 @@ import java.util.TimerTask;
  */
 public class RMIServer
 {
-    private static final int portNumber = 5081;
+    private static final int portNumber = 1099;
 
     private static final String bindingName = "AEX";
 

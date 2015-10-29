@@ -6,6 +6,7 @@
 package gsobanner;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,10 +14,11 @@ import java.util.List;
  * @author Bart Memelink
  */
 public class Effectenbeurs implements IEffectenbeurs, Serializable {
-
+    private List<IFonds> fondsList = new ArrayList<>();
+    
     @Override
     public List<IFonds> getKoersen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return fondsList;
     }
     
 }

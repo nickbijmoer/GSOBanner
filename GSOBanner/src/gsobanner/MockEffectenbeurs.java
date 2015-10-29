@@ -19,16 +19,22 @@ import java.util.TimerTask;
  */
 public class MockEffectenbeurs extends UnicastRemoteObject implements IEffectenbeurs{
 
-    private List<IFonds> fonds;
+    private List<IFonds> fonds = new ArrayList<>();
     private Timer timer;
     private Random random;
     
     public MockEffectenbeurs() throws RemoteException
     {
         ArrayList<IFonds> temps = new ArrayList<IFonds>();
-        temps.add(new Fond("Nick", 5.2));
+        temps.add(new Fond("Nick", 3));
         temps.add(new Fond("Bart", 7.1));
-        temps.add(new Fond("Turtle", 2));
+        temps.add(new Fond("Bananen", 2));
+        temps.add(new Fond("Incredible Gentlemen", 2));
+        temps.add(new Fond("Skype", 2));
+        temps.add(new Fond("Steam", 2));
+        temps.add(new Fond("Netbeans", 2));
+
+
         this.fonds = temps;
         this.timer = new Timer();
         this.random = new Random();
@@ -36,7 +42,7 @@ public class MockEffectenbeurs extends UnicastRemoteObject implements IEffectenb
     }
     
     @Override
-    public List<IFonds> getKoersen() {
+    public List<IFonds> getKoersen() throws RemoteException {
         return fonds;
     }
     

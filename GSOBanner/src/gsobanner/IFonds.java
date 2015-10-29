@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public interface IFonds extends Serializable{
     
-    String getName();
-    double getKoers();
+   String getName();
+   double getKoers();
     
 }
