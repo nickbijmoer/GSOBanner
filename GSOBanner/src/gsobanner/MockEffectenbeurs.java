@@ -55,7 +55,7 @@ public class MockEffectenbeurs extends UnicastRemoteObject implements IEffectenb
                  for(IFonds f : fonds)
                    ((Fond) f).setKoers(random.nextInt(99 - 1) /100 + random.nextInt(99 -1));
             }
-        }, 0, 8000);
+        }, 0, 5000);
     }
     
     public void StopTimer()
