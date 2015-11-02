@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gsobanner;
+package server;
 
+import Share.IEffectenbeurs;
+import Share.IFonds;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

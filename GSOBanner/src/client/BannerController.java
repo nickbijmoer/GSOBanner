@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gsobanner;
+package client;
 
+import server.MockEffectenbeurs;
+import Share.IEffectenbeurs;
+import Share.IFonds;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

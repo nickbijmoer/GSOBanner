@@ -1,11 +1,12 @@
-package gsobanner;
+package client;
 
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import gsobanner.IEffectenbeurs;
+import Share.IFonds;
+import Share.IEffectenbeurs;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

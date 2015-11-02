@@ -1,4 +1,5 @@
-import gsobanner.MockEffectenbeurs;
+package server;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gsobanner;
+package client;
 
 import java.rmi.RemoteException;
 import javafx.animation.AnimationTimer;

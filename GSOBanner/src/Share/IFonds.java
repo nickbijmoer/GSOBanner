@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gsobanner;
+package Share;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-import java.util.List;
+import java.io.Serializable;
 
 /**
  *
  * @author Bart Memelink
  */
-public interface IEffectenbeurs extends Remote{
+public interface IFonds extends Serializable{
     
-    public List<IFonds> getKoersen() throws RemoteException;
+   String getName();
+   double getKoers();
+    
 }

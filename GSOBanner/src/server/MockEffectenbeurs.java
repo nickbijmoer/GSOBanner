@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gsobanner;
+package server;
 
+import Share.Fond;
+import Share.IEffectenbeurs;
+import Share.IFonds;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
